@@ -8,10 +8,7 @@ type Props = {
   position: Vector3
 }
 
-const Jacket: FC<Props> = ({
-  ImageURL = 'https://i.scdn.co/image/ab67616d0000b273ec7a33f5867fc840bf19d3fb',
-  position,
-}) => {
+const Jacket: FC<Props> = ({ ImageURL, position }) => {
   const jacketRef = useRef<Mesh>(null)
   let isRightMove = true
   useFrame(() => {
@@ -25,7 +22,7 @@ const Jacket: FC<Props> = ({
     }
   })
 
-  const map = useLoader(TextureLoader, ImageURL)
+  const map = useLoader(TextureLoader, ImageURL ? ImageURL : '/white.png')
 
   return (
     <mesh ref={jacketRef} position={position} castShadow receiveShadow>
