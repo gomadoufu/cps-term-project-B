@@ -17,15 +17,15 @@ const SearchButton = (props: Props) => {
     fetch(props.baseUrl + '/feature' + '?song=' + props.song, { method: 'GET', mode: 'cors' })
       .then((res) => res.json())
       .then((res) => {
-        console.log(res)
         const data = res as SongFeature
+        console.log(data)
         router.push({
           pathname: '/termProject/result',
           query: {
             title: data.SongName,
             image: data.ImageURL,
-            danceability: data.Feature[0].danceability,
-            energy: data.Feature[0].energy,
+            danceability: data.Danceability,
+            energy: data.Energy,
           },
         })
       })

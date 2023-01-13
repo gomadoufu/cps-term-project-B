@@ -2,7 +2,6 @@ package use_spotify
 
 import (
 	"context"
-	"encoding/json"
 	"log"
 	"net/http"
 	"os"
@@ -16,10 +15,11 @@ import (
 )
 
 type SongFeature struct {
-	SongName string
-	Artist   []string
-	ImageURL string
-	Feature  string
+	SongName     string
+	Artist       []string
+	ImageURL     string
+	Danceability float32
+	Energy       float32
 }
 
 func (sf *SongFeature) New(song string) {
@@ -50,10 +50,8 @@ func (sf *SongFeature) New(song string) {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-	bytes, _ := json.MarshalIndent(feature, "", "  ")
-
-	sf.Feature = string(bytes)
+	sf.Danceability = feature[0].Danceability
+	sf.Energy = feature[0].Energy
 }
 
 func loadEnv() {
