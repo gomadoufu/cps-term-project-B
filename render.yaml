@@ -5,3 +5,9 @@ services:
     rootDir: backend
     buildCommand: go build -o app .
     startCommand: ./app
+  - type: web
+    name: frontend-docker
+    env: docker
+    rootDir: docker
+    dockerfilePath: ./Dockerfile
+    dockerContext: .

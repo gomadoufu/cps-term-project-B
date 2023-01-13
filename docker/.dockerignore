@@ -1,0 +1,12 @@
+# Ignore everything
+**
+
+# Allowed files
+!/frontend/build/**
+!/frontend/public/**
+!/frontend/next.config.js
+!/frontend/package.json
+!/frontend/yarn.lock
+
+!/frontend/.yarn/**
+!/frontend/.yarnrc
