@@ -19,7 +19,7 @@ type SongFeature struct {
 	SongName string
 	Artist   []string
 	ImageURL string
-	Fearure  string
+	Feature  string
 }
 
 func (sf *SongFeature) New(song string) {
@@ -53,7 +53,7 @@ func (sf *SongFeature) New(song string) {
 
 	bytes, _ := json.MarshalIndent(feature, "", "  ")
 
-	sf.Fearure = string(bytes)
+	sf.Feature = string(bytes)
 }
 
 func loadEnv() {

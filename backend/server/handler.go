@@ -13,7 +13,7 @@ type Handler struct {
 }
 
 func (h *Handler) Health(c echo.Context) error {
-	return c.JSON(http.StatusOK, use_spotify.SongFeature{SongName: "OK", Artist: []string{"OK"}, ImageURL: "OK", Fearure: "OK"})
+	return c.JSON(http.StatusOK, use_spotify.SongFeature{SongName: "OK", Artist: []string{"OK"}, ImageURL: "OK", Feature: "OK"})
 }
 
 func (h *Handler) GetFeature(c echo.Context) error {

@@ -8,8 +8,6 @@ import Text3DObject from '@/components/text3DObject/text3DObject'
 const Search: NextPage = () => {
   const [searchText, setSearchText] = useState('')
 
-  const [result, setResult] = useState('')
-
   const onChangeText = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchText(e.target.value)
   }, [])
@@ -50,11 +48,7 @@ const Search: NextPage = () => {
               placeholder="曲名を入力"
             />
           </div>
-          <SearchButton
-            baseUrl={'http://localhost:8080'}
-            song={searchText}
-            setState={setResult}
-          ></SearchButton>
+          <SearchButton baseUrl={'http://localhost:8080'} song={searchText}></SearchButton>
         </div>
       </div>
     </div>
