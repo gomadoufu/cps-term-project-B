@@ -10,17 +10,17 @@ type Props = {
 }
 
 const SearchButton = (props: Props) => {
-  const onClickButton = useCallback(() => {
-    fetch(props.baseUrl + 'health', { method: 'GET' })
+  const callback = () => {
+    fetch(props.baseUrl + '/health', { method: 'GET', mode: 'no-cors' })
       .then((res) => res.json())
       .then((data) => {
-        alert(data.name)
+        console.log(data)
         props.setState(data.name)
       })
-  }, [props])
+  }
 
   return (
-    <div className={styles.button} onClick={onClickButton}>
+    <div className={styles.button} onClick={callback}>
       検索
     </div>
   )

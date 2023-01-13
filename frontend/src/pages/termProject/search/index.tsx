@@ -46,10 +46,7 @@ const Search: NextPage = () => {
               placeholder="曲名を入力"
             />
           </div>
-          <SearchButton
-            baseUrl={'https://c1fb-240f-6e-356a-1-608b-4ce9-316a-eaba.jp.ngrok.io/'}
-            setState={setResult}
-          ></SearchButton>
+          <SearchButton baseUrl={'http://localhost:8080'} setState={setResult}></SearchButton>
         </div>
       </div>
     </div>
