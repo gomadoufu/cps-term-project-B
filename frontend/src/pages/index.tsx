@@ -5,7 +5,6 @@ import { useEffect } from 'react'
 const Home: NextPage = () => {
   const router = useRouter()
   useEffect(() => {
-    console.log('useEffect')
     router.push('/displayCube')
   }, [router])
 
