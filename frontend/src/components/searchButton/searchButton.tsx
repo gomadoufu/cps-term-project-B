@@ -1,9 +1,9 @@
 import { useRouter } from 'next/router'
 import React, { useCallback } from 'react'
 
-import styles from '../../styles/searchPage.module.css'
-
 import type { SongFeature } from '@/types'
+
+import styles from '../../styles/searchPage.module.css'
 
 type Props = {
   baseUrl: string
