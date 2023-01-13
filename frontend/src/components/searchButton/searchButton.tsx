@@ -11,11 +11,11 @@ type Props = {
 
 const SearchButton = (props: Props) => {
   const callback = () => {
-    fetch(props.baseUrl + '/health', { method: 'GET', mode: 'no-cors' })
+    fetch(props.baseUrl + '/health', { method: 'GET', mode: 'cors' })
       .then((res) => res.json())
       .then((data) => {
         console.log(data)
-        props.setState(data.name)
+        props.setState(data.SongName)
       })
   }
 
