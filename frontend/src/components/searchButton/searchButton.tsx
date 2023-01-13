@@ -6,21 +6,21 @@ import styles from '../../styles/searchPage.module.css'
 
 type Props = {
   baseUrl: string
+  song: string
   setState: React.Dispatch<React.SetStateAction<string>>
 }
 
 const SearchButton = (props: Props) => {
-  const callback = () => {
-    fetch(props.baseUrl + '/health', { method: 'GET', mode: 'cors' })
+  const onClick = useCallback(() => {
+    fetch(props.baseUrl + '/feature' + '?song=' + props.song, { method: 'GET', mode: 'cors' })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data)
-        props.setState(data.SongName)
+        props.setState(JSON.stringify(data))
       })
-  }
+  }, [props])
 
   return (
-    <div className={styles.button} onClick={callback}>
+    <div className={styles.button} onClick={onClick}>
       検索
     </div>
   )

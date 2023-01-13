@@ -1,6 +1,6 @@
 export type SongFeature = {
-  name: string
-  artist: string[]
-  imageUrl: string
-  feature: string
+  SongName: string
+  Artist: string[]
+  ImageURL: string
+  Feature: string
 }

@@ -14,6 +14,10 @@ const Search: NextPage = () => {
     setSearchText(e.target.value)
   }, [])
 
+  useEffect(() => {
+    searchText.replace(' ', '+')
+  }, [searchText])
+
   return (
     <div className="w-screen h-screen bg-gradient-to-br from-[#0A2647] to-[#91D8E4]">
       <div className="h-full w-full absolute z-0">
@@ -46,7 +50,11 @@ const Search: NextPage = () => {
               placeholder="曲名を入力"
             />
           </div>
-          <SearchButton baseUrl={'http://localhost:8080'} setState={setResult}></SearchButton>
+          <SearchButton
+            baseUrl={'http://localhost:8080'}
+            song={searchText}
+            setState={setResult}
+          ></SearchButton>
         </div>
       </div>
     </div>
