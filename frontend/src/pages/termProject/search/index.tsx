@@ -48,7 +48,10 @@ const Search: NextPage = () => {
               placeholder="曲名を入力"
             />
           </div>
-          <SearchButton baseUrl={'http://localhost:8080'} song={searchText}></SearchButton>
+          <SearchButton
+            baseUrl={'https://cps-term-app.onrender.com'}
+            song={searchText}
+          ></SearchButton>
         </div>
       </div>
     </div>
