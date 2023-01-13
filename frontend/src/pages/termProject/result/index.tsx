@@ -61,7 +61,7 @@ const Result: NextPage<Props> = ({ ImageURL, title, danceability = 1, energy = 1
           <directionalLight position={[1, 1, 1]} intensity={0.8} />
           <ambientLight args={[0xffffff]} intensity={0.2} />
           <Suspense fallback={null}>
-            <Jacket position={[0, 0, 0]}></Jacket>
+            <Jacket position={[0, 0, 0]} ImageURL={ImageURL}></Jacket>
           </Suspense>
           {setArraySize(danceability).map((num) => (
             <Indicator
@@ -76,12 +76,7 @@ const Result: NextPage<Props> = ({ ImageURL, title, danceability = 1, energy = 1
               index={Math.floor(Math.random() * 10)}
             />
           ))}
-          <Text3DObject
-            position={[0, 0, 5]}
-            text="CHAMPION GIRL"
-            size={3}
-            color={'black'}
-          ></Text3DObject>
+          <Text3DObject position={[0, 0, 5]} text={title} size={3} color={'black'}></Text3DObject>
           <OrbitControls />
         </Canvas>
       </div>

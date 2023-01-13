@@ -28,7 +28,7 @@ const Text3DObject: FC<Props> = ({ position, text, size, color }) => {
         bevelEnabled
         bevelSize={0.02}
       >
-        {text}
+        {text ? text : 'null'}
         <meshStandardMaterial color={color} />
       </Text3D>
     </Center>
