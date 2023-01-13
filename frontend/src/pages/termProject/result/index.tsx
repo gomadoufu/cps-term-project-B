@@ -16,6 +16,11 @@ const Result: NextPage = () => {
   const danceability = parseFloat(router.query.danceability as string)
   const energy = parseFloat(router.query.energy as string)
 
+  console.log(title)
+  console.log(ImageURL)
+  console.log(danceability)
+  console.log(energy)
+
   function setColor() {
     const color = ((Math.random() * 0xffffff) | 0).toString(16)
     const randomColor = '#' + ('000000' + color).slice(-6)
