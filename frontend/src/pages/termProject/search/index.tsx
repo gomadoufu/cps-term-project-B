@@ -33,7 +33,7 @@ const Search: NextPage = () => {
           <ambientLight args={[0xffffff]} intensity={0.2} />
           <Text3DObject
             position={[0, 2, 0]}
-            text="Spotify Danceabilty Search"
+            text="Spotify Dance & Energy Viewer"
             size={1}
             color={'aqua'}
           ></Text3DObject>

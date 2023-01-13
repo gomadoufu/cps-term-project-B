@@ -8,8 +8,8 @@ import Indicator from '@/components/indicator/indicator'
 import Text3DObject from '@/components/text3DObject/text3DObject'
 
 type Props = {
-  ImageURL: string
   title: string
+  ImageURL: string
   danceability: number
   energy: number
 }
