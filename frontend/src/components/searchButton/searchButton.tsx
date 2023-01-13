@@ -1,9 +1,7 @@
+import { useRouter } from 'next/router'
 import React, { useCallback } from 'react'
 
-import type { SongFeature } from '@/types'
-
 import styles from '../../styles/searchPage.module.css'
-import { useRouter } from 'next/router'
 
 type Props = {
   baseUrl: string
@@ -17,6 +15,7 @@ const SearchButton = (props: Props) => {
     fetch(props.baseUrl + '/feature' + '?song=' + props.song, { method: 'GET', mode: 'cors' })
       .then((res) => res.json())
       .then((data) => {
+        console.log(data)
         props.setState(JSON.stringify(data))
       })
     router.push('/termProject/result')

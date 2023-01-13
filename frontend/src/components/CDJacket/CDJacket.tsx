@@ -22,8 +22,6 @@ const Jacket: FC<Props> = ({
       if (e.z > 0.3) isRightMove = false
       if (e.z < -0.3) isRightMove = true
       isRightMove ? (jacket.rotation.z += 0.005) : (jacket.rotation.z -= 0.005)
-      console.log(e)
-      console.log(isRightMove)
     }
   })
 
