@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router'
-import React, { useCallback } from 'react'
+import React, { useCallback, useState } from 'react'
 
 import styles from '../../styles/searchPage.module.css'
 
@@ -10,16 +10,19 @@ type Props = {
 }
 
 const SearchButton = (props: Props) => {
+  const [data, setData] = useState('')
+
   const router = useRouter()
   const onClick = useCallback(() => {
     fetch(props.baseUrl + '/feature' + '?song=' + props.song, { method: 'GET', mode: 'cors' })
       .then((res) => res.json())
       .then((data) => {
         console.log(data)
+        setData(JSON.stringify(data))
         props.setState(JSON.stringify(data))
       })
-    router.push('/termProject/result')
-  }, [props, router])
+    router.push({ pathname: '/termProject/result', query: { data: data } })
+  }, [data, props, router])
 
   return (
     <div className={styles.button} onClick={onClick}>

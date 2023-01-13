@@ -6,20 +6,34 @@ import React, { Suspense } from 'react'
 import Jacket from '@/components/CDJacket/CDJacket'
 import Indicator from '@/components/indicator/indicator'
 import Text3DObject from '@/components/text3DObject/text3DObject'
+import type { SongFeature } from '@/types'
 
 type Props = {
-  title: string
-  ImageURL: string
-  danceability: number
-  energy: number
+  data: string
 }
 
-const Result: NextPage<Props> = ({ ImageURL, title, danceability = 1, energy = 1 }) => {
+const Result: NextPage<Props> = ({ data }) => {
   function setColor() {
     const color = ((Math.random() * 0xffffff) | 0).toString(16)
     const randomColor = '#' + ('000000' + color).slice(-6)
     return randomColor
   }
+
+  let title = ''
+  let ImageURL = ''
+  let danceability = 0
+  let energy = 0
+
+  function queryIntoJson() {
+    const jsonData = JSON.parse(data) as SongFeature
+    title = jsonData.SongName
+    ImageURL = jsonData.ImageURL
+    const feature = jsonData.Feature[0]
+    danceability = feature.danceability
+    energy = feature.energy
+  }
+
+  queryIntoJson()
 
   function setArraySize(danceability: number) {
     let size = 0
