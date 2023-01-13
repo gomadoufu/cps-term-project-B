@@ -2,12 +2,11 @@ import { OrbitControls } from '@react-three/drei'
 import { Canvas } from '@react-three/fiber'
 import { NextPage } from 'next'
 import { useRouter } from 'next/router'
-import React, { Suspense, useState } from 'react'
+import React, { Suspense } from 'react'
 
 import Jacket from '@/components/CDJacket/CDJacket'
 import Indicator from '@/components/indicator/indicator'
 import Text3DObject from '@/components/text3DObject/text3DObject'
-import type { SongFeature } from '@/types'
 
 const Result: NextPage = () => {
   const router = useRouter()
