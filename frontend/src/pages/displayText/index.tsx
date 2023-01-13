@@ -17,7 +17,7 @@ const DisplayCube: NextPage = () => {
       >
         <directionalLight position={[1, 1, 1]} intensity={0.8} />
         <ambientLight args={[0xffffff]} intensity={0.2} />
-        <TextObject text="" font="a" />
+        <TextObject text="" font="a" position={0} fontSize={0} color={''} />
         <OrbitControls />
       </Canvas>
     </div>

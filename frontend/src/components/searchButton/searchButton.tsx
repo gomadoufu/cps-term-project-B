@@ -14,7 +14,7 @@ const SearchButton = (props: Props) => {
   const router = useRouter()
 
   const onClick = useCallback(() => {
-    fetch(props.baseUrl + '/feature' + '?song=' + props.song, { method: 'GET', mode: 'cors' })
+    fetch(props.baseUrl + '/search' + '?song=' + props.song, { method: 'GET', mode: 'cors' })
       .then((res) => res.json())
       .then((res) => {
         const data = res as SongFeature

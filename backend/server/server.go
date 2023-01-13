@@ -9,8 +9,8 @@ func ServerRun() {
 	h := new(Handler)
 	e := echo.New()
 	e.Use(middleware.Logger())
-	e.Use(middleware.CORSWithConfig(middleware.CORSConfig{AllowOrigins: []string{"*"}}))
+	e.Use(middleware.CORSWithConfig(middleware.CORSConfig{AllowOrigins: []string{"http://localhost:3000"}, AllowCredentials: true}))
 	e.GET("/health", h.Health)
-	e.GET("/feature", h.GetFeature)
+	e.GET("/search", h.GetFeature)
 	e.Logger.Fatal(e.Start(":8080"))
 }

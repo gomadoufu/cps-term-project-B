@@ -12,8 +12,8 @@ const Result: NextPage = () => {
   const router = useRouter()
   const title = router.query.title as string
   const ImageURL = router.query.image as string
-  const danceability = router.query.danceability as string
-  const energy = router.query.energy as string
+  const danceability = router.query.danceability as unknown as number
+  const energy = router.query.energy as unknown as number
 
   console.log(title)
   console.log(ImageURL)
