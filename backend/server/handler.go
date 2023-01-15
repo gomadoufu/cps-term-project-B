@@ -16,7 +16,7 @@ type Handler struct {
 // Health is a health check endpoint /health
 func (h *Handler) Health(c echo.Context) error {
 	fmt.Println("Health Check request received")
-	return c.JSON(http.StatusOK, use_spotify.SongFeature{SongName: "OK", Artist: []string{"OK"}, ImageURL: "OK", Danceability: 0.0, Energy: 0.0})
+	return c.JSON(http.StatusOK, use_spotify.SongFeature{SongName: "OK", Artists: []string{"OK"}, ImageURL: "OK", Danceability: 0.0, Energy: 0.0})
 }
 
 // GetFeature is a search endpoint /search

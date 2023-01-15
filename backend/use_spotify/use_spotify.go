@@ -10,13 +10,12 @@ import (
 
 	"golang.org/x/oauth2/clientcredentials"
 
-	"github.com/joho/godotenv"
 	"github.com/zmb3/spotify/v2"
 )
 
 type SongFeature struct {
 	SongName     string
-	Artist       []string
+	Artists      []string
 	ImageURL     string
 	Danceability float32
 	Energy       float32
@@ -24,8 +23,6 @@ type SongFeature struct {
 
 func (sf *SongFeature) New(song string) {
 
-	// load .env file
-	loadEnv()
 	// get token
 	ctx, httpClient := auth()
 	client := spotify.New(httpClient)
@@ -41,7 +38,7 @@ func (sf *SongFeature) New(song string) {
 	sf.SongName = track.Name
 
 	for _, artist := range track.Artists {
-		sf.Artist = append(sf.Artist, artist.Name)
+		sf.Artists = append(sf.Artists, artist.Name)
 	}
 
 	sf.ImageURL = track.Album.Images[0].URL
@@ -52,13 +49,6 @@ func (sf *SongFeature) New(song string) {
 	}
 	sf.Danceability = feature[0].Danceability
 	sf.Energy = feature[0].Energy
-}
-
-func loadEnv() {
-	err := godotenv.Load()
-	if err != nil {
-		log.Fatal("Error loading .env file")
-	}
 }
 
 func auth() (context.Context, *http.Client) {
