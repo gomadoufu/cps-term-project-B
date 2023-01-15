@@ -28,15 +28,27 @@ const Result: NextPage = () => {
 
   function setArraySize(danceability: number) {
     let size = 0
-    danceability < 0.2
-      ? (size = 100)
+    danceability < 0.3
+      ? (size = 50)
       : danceability < 0.4
-      ? (size = 200)
+      ? (size = 100)
+      : danceability < 0.5
+      ? (size = 150)
       : danceability < 0.6
+      ? (size = 200)
+      : danceability < 0.7
+      ? (size = 250)
+      : danceability < 0.75
       ? (size = 300)
       : danceability < 0.8
-      ? (size = 400)
-      : (size = 500)
+      ? (size = 320)
+      : danceability < 0.85
+      ? (size = 340)
+      : danceability < 0.9
+      ? (size = 360)
+      : danceability < 0.95
+      ? (size = 380)
+      : (size = 400)
     const array = [...Array(size)].map((_, i) => i)
     return array
   }
@@ -81,7 +93,7 @@ const Result: NextPage = () => {
               index={Math.floor(Math.random() * 10)}
             />
           ))}
-          <Text3DObject position={[0, 0, 5]} text={title} size={3} color={'black'}></Text3DObject>
+          <Text3DObject position={[0, 0, 5]} text={title} size={3} color={'brown'}></Text3DObject>
           <OrbitControls />
         </Canvas>
       </div>
