@@ -9,7 +9,7 @@ import (
 
 func main() {
 	// load .env file
-	loadEnv()
+	// loadEnv()
 	// start server
 	server.ServerRun()
 }
