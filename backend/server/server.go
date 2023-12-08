@@ -11,7 +11,7 @@ func ServerRun() {
 	h := new(Handler)
 	e := echo.New()
 	e.Use(middleware.CORSWithConfig(middleware.CORSConfig{
-		AllowOrigins: []string{"https://cps-term-project-b.onrender.com"},
+		AllowOrigins: []string{"https://cps-term-project-b.vercel.app"},
 		AllowMethods: []string{http.MethodGet},
 	}))
 
