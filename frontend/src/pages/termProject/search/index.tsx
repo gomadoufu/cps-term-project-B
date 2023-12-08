@@ -49,7 +49,7 @@ const Search: NextPage = () => {
             />
           </div>
           <SearchButton
-            baseUrl={'https://cps-term-app.onrender.com'}
+            baseUrl={'https://cps-term-project-b.onrender.com'}
             song={searchText}
           ></SearchButton>
         </div>
